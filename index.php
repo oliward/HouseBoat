@@ -123,8 +123,7 @@
 											
 											<p>This 2°C of temperature change over the next 2000 years is </p>
 										
-											<p>The pessimistic view of the temperature trend could see 4°C of warming over the next 2000 years.</p>
-											
+											<p>The pessimistic view of the temperature trend could see 4°C of warming over the next 2000 years.</p>											
 											
 											<h4>The Numbers</h4>
 											
@@ -188,21 +187,67 @@
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="theme/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
-		
+		<script type="text/javascript" src="theme/js/gm.js"></script>
+    	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-AbJabQ7T1f0vcfN3tQibeZ_BkXzf1Tg&sensor=true"></script>
 		<script type="text/javascript">
-		jQuery('.advanced-query-show').click(function(event){
-			event.preventDefault();
-			jQuery('#advanced-query').slideToggle(200);
-		});
-		jQuery('form').submit(function(event){
-			event.preventDefault();
-			jQuery('#pre-search').hide();
-			jQuery('#post-search').show();
-		});
-		jQuery('.repeat-search').click(function(event){
-			jQuery('#pre-search').show();
-			jQuery('#post-search').hide();
-		});
+
+			function init(map) {
+				var mapOptions = {
+					center: new google.maps.LatLng(-34.397, 150.644),
+					zoom: 8
+		    	};
+				if (map != null) {
+					map = new google.maps.Map(document.getElementById(map), mapOptions);
+				} 
+		    	geocoder = new google.maps.Geocoder();
+				google.maps.event.addDomListener(document.getElementById('submit-btn'), 'click', getLoc);
+				elevator = new google.maps.ElevationService();
+				setVars(map, geocoder, elevator);
+			}
+
+			function geoResultCallback(geoResult) {
+				if (geoResult != null) {
+	    			// Get lat/long
+	            	lat = geoResult.geometry.location.lat();
+	            	lng = geoResult.geometry.location.lng();
+	            	alert("Latitude: " + lat + " Longitude: " + lng);
+	            	getElevation(geoResult.geometry.location);
+	            }
+			}
+
+			function eleResultCallback(eleResult) {
+				if (eleResult != null) {
+	    			// Get elevation
+	            	alert("Elevation: " + eleResult);
+	            }
+			}
+
+			function getLoc() {
+    			var pc = $("#postcode").val();
+    			if (pc.trim() != "" && pc.trim() != null) {
+    				geocodePostcode(pc);
+        		} else {
+					alert("Please enter a postcode");
+    			}
+    		}
+		
+			google.maps.event.addDomListener(window, 'load', init);
+    		init();
+    	</script>
+		<script type="text/javascript">
+			jQuery('.advanced-query-show').click(function(event){
+				event.preventDefault();
+				jQuery('#advanced-query').slideToggle(200);
+			});
+			jQuery('form').submit(function(event){
+				event.preventDefault();
+				jQuery('#pre-search').hide();
+				jQuery('#post-search').show();
+			});
+			jQuery('.repeat-search').click(function(event){
+				jQuery('#pre-search').show();
+				jQuery('#post-search').hide();
+			});
 		</script>
 	</body>
 </html>
