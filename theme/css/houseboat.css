@@ -2,6 +2,8 @@
  * Globals
  */
 
+
+
 /* buttons */
 
 .btn:hover {
@@ -30,15 +32,17 @@ input {
 	text-align: center;
 }
 
+select, input[type="submit"], input[type="text"]{
+	font-size: 1.5em;
+}
+
 input[type="submit"]{
 	color: #09a3e2;
 	position: relative;
 	top: -7px;
-	font-size: 1.5em;
 }
 
 input[type="text"]{
-	font-size: 1.5em;
 	padding: 5px;
 }
 
@@ -63,11 +67,11 @@ label {
 }
 
 .result.house {
-	background: #09a3e2 url(../images/house.png) center center no-repeat;
+	background: #e82900 url(../images/house.png) center center no-repeat;
 }
 
 .result.boat {
-	background: #e82900 url(../images/boat.png) center center no-repeat;
+	background: #09a3e2 url(../images/boat.png) center center no-repeat;
 }
 
 .result.denial {
@@ -75,17 +79,45 @@ label {
 	background: #00aaa9 url(../images/denial.png) center bottom no-repeat;
 }
 
+/*
+ * iPhone form
+ */
+
+@media (max-width: 768px) {
+	input, label {
+		display: block;
+		margin: 0 auto;
+	}
+	
+	label {
+		margin: 30px auto;
+	}
+}
 
 
 /*
  * Base structure
  */
 
+.site-wrapper {
+	height: 706px;
+	overflow: auto;
+	display: block;
+}
+
+.site-wrapper-inner {
+	display: block;
+}
+
+.cover-container {
+	overflow: hidden;
+}
+
 .masthead {
 	position: fixed;
 }
 
-section#query {
+section {
 	padding-top: 150px;
 }
 
@@ -93,6 +125,26 @@ section#query {
 /*
  * Content styling
  */
+
+a {
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #09a3e2;
+}
+
+.masthead a, a.btn {
+	text-decoration: none;
+}
+
+ul, ol, li {
+	
+}
+
+img {
+	width: 100%;
+}
 
 h1 em {
 	color: #09a3e2;
@@ -112,4 +164,13 @@ section.text {
 
 table {
 	font-size: 0.8em;
+}
+
+.reference {
+	font-size: 0.8em;
+}
+
+.advanced-query-show {
+	text-decoration: none;
+	color: #666;
 }
