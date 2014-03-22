@@ -51,7 +51,7 @@
 							    </fieldset>
 							    
 							    <fieldset>
-							    	<label for="outlook">I am …</label>
+							    	<label for="outlook">I am ���</label>
 							    	
 							    	<select id="outlook" name="outlook">
 							    		<option value="optimist">an optimist</option>
@@ -69,7 +69,7 @@
 							    	</select>
 							    </fieldset>
 							</form>
-							<p class="lead"><a href="#climate-change" class="btn btn-lg btn-default">Learn more</a></p>
+							<p id="submit-btn" class="lead"><a href="#climate-change" class="btn btn-lg btn-default">Learn more</a></p>
 						</section>
 						<section>
 							<h2 id="climate-change">Factors considered in your future housing solution</h2>
@@ -77,7 +77,7 @@
 							<ol>
 								<li>
 									<h3>flooding</h3>
-									<p>short-term weather conditions can… We make </p>
+									<p>short-term weather conditions can��� We make </p>
 								</li>
 								<li>
 									<h3>sea level rise</h3>
@@ -89,9 +89,9 @@
 											<p>Future sea level rise is based on estimations, since it's not possible (yet) to know the future. Our estimation, up to 2100, is based on the <a href="http://www.ipcc.ch/pdf/unfccc/cop19/3_gregory13sbsta.pdf">results of modelling sea level rise</a>, as reported in the Intergovernmental Panel on Climate Change's <a href="http://www.climatechange2013.org/">Climate Change 2013 Report</a>.</p>
 										</li>
 										<li>
-											<p>Our estimations up to 1000 years in the future are based on <a href="http://www.pnas.org/content/early/2013/07/10/1219414110">Levermann et al.'s 2013 paper in PNAS</a>, predicts that 1°C of warming would result in a global sea level rise of 2.3m within 2000 years, with 2°C of warming 2°C leading to 4.8 m within 2000 years.</p>
+											<p>Our estimations up to 1000 years in the future are based on <a href="http://www.pnas.org/content/early/2013/07/10/1219414110">Levermann et al.'s 2013 paper in PNAS</a>, predicts that 1��C of warming would result in a global sea level rise of 2.3m within 2000 years, with 2��C of warming 2��C leading to 4.8 m within 2000 years.</p>
 										
-											<p>of warming over the next 2000 years is an often used optimistic goal. The pessimistic view of the temperature trend could see 4°C of warming over the next 2000 years.</p>
+											<p>of warming over the next 2000 years is an often used optimistic goal. The pessimistic view of the temperature trend could see 4��C of warming over the next 2000 years.</p>
 											
 											
 											Global sea-level rise in cm by the year 2100 as projected by the IPCC AR5. The values are relative to the mean over 1986-2005, so subtract about a centimetre to get numbers relative to the year 2000.
@@ -133,7 +133,7 @@
 											
 											1000 years:
 											
-											Most optimistic estimate, from Levermann et al, is temperature change of 1°C over next century, leading to +230cm change. Most pessimistic is temperature change of 2°C over next century, leading to +480cm change.
+											Most optimistic estimate, from Levermann et al, is temperature change of 1��C over next century, leading to +230cm change. Most pessimistic is temperature change of 2��C over next century, leading to +480cm change.
 											
 											</li>
 											
@@ -168,5 +168,52 @@
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="theme/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="theme/js/gm.js"></script>
+    	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-AbJabQ7T1f0vcfN3tQibeZ_BkXzf1Tg&sensor=true"></script>
+		<script type="text/javascript">
+
+			function init(map) {
+				var mapOptions = {
+					center: new google.maps.LatLng(-34.397, 150.644),
+					zoom: 8
+		    	};
+				if (map != null) {
+					map = new google.maps.Map(document.getElementById(map), mapOptions);
+				} 
+		    	geocoder = new google.maps.Geocoder();
+				google.maps.event.addDomListener(document.getElementById('submit-btn'), 'click', getLoc);
+				elevator = new google.maps.ElevationService();
+				setVars(map, geocoder, elevator);
+			}
+
+			function geoResultCallback(geoResult) {
+				if (geoResult != null) {
+	    			// Get lat/long
+	            	lat = geoResult.geometry.location.lat();
+	            	lng = geoResult.geometry.location.lng();
+	            	alert("Latitude: " + lat + " Longitude: " + lng);
+	            	getElevation(geoResult.geometry.location);
+	            }
+			}
+
+			function eleResultCallback(eleResult) {
+				if (eleResult != null) {
+	    			// Get elevation
+	            	alert("Elevation: " + eleResult);
+	            }
+			}
+
+			function getLoc() {
+    			var pc = $("#postcode").val();
+    			if (pc.trim() != "" && pc.trim() != null) {
+    				geocodePostcode(pc);
+        		} else {
+					alert("Please enter a postcode");
+    			}
+    		}
+		
+			google.maps.event.addDomListener(window, 'load', init);
+    		init();
+    	</script>
 	</body>
 </html>
