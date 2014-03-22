@@ -2,9 +2,77 @@
  * Globals
  */
 
+/* buttons */
+
+.btn:hover {
+	background: #09a3e2;
+	color: #fff;
+	border-color: #09a3e2;
+}
+
 /* forms */
+
+form {
+	/* display: none; XXX */
+}
+
+#advanced-query {
+	display: none;
+}
+
+#post-search {
+	display: none;
+}
+
 input {
-  color: #fff;
+	color: #09a3e2;
+	border: 3px solid #ccc;
+	text-align: center;
+}
+
+input[type="submit"]{
+	color: #09a3e2;
+	position: relative;
+	top: -7px;
+	font-size: 1.5em;
+}
+
+input[type="text"]{
+	font-size: 1.5em;
+	padding: 5px;
+}
+
+label {
+	padding: 0 10px;
+	font-size: 2em;
+}
+
+.repeat-search {
+	float: right;
+}
+
+.result {
+	margin: 0 auto;
+	width: 200px;
+	height: 200px;
+	padding: 20px;
+}
+
+.result.house, .result.boat {
+	
+}
+
+.result.house {
+	background: #09a3e2 url(../images/house.png) center center no-repeat;
+}
+
+.result.boat {
+	background: #e82900 url(../images/boat.png) center center no-repeat;
+}
+
+.result.denial {
+	font-size: 1.6em;
+	background: #00aaa9 url(../images/denial.png) center bottom no-repeat;
 }
 
 
@@ -13,6 +81,35 @@ input {
  * Base structure
  */
 
-.cover-container {
-	margin-top: 150px;
+.masthead {
+	position: fixed;
+}
+
+section#query {
+	padding-top: 150px;
+}
+
+
+/*
+ * Content styling
+ */
+
+h1 em {
+	color: #09a3e2;
+}
+
+h1 em.red {
+	color: #e82900;
+}
+
+.lead {
+	margin: 40px 0;
+}
+
+section.text {
+	text-align: left;
+}
+
+table {
+	font-size: 0.8em;
 }

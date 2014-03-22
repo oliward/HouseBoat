@@ -8,7 +8,7 @@
 		<meta name="author" content="">
 		<link rel="shortcut icon" href="theme/images/favicon.ico">
 		
-		<title>Cover Template for Bootstrap</title>
+		<title>House/Boat</title>
 		
 		<!-- Bootstrap core CSS -->
 		<link href="theme/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
 							<h3 class="masthead-brand">house/boat</h3>
 							
 							<ul class="nav masthead-nav">
-								<li class="active"><a href="#query">House or Boat?</a></li>
+								<li><a href="#query">House or Boat?</a></li>
 								<li><a href="#climate-change">Climate Change</a></li>
 								<li><a href="#about">About</a></li>
 							</ul>
@@ -40,61 +40,90 @@
 					</div>
 					
 					<div class="inner cover">
-						<section>
-							<h1 id="query" class="cover-heading">Do you need a <em>House</em> or a <em>Boat</em>?.</h1>
-							
-							<p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-							
-							<form action="" method="post">
-							    <fieldset>
-							    	<label for="postcode">I live</label><input type="text" id="postcode" name="postcode" placeholder="{enter postcode}" />
-							    </fieldset>
-							    
-							    <fieldset>
-							    	<label for="outlook">I am ���</label>
-							    	
-							    	<select id="outlook" name="outlook">
-							    		<option value="optimist">an optimist</option>
-							    		<option value="pessimist" selected="selected">a pessimist</option>
-							    		<option value="denial">a climate change denier</option>
-							    	</select>
-							    	
-							    	<label for="years">I want to live here for</label>
-							    	
-							    	<select id="years" name="years">
-							    		<option value="1">1 year</option>
-							    		<option value="10">10 years</option>
-							    		<option value="100" selected="selected">100 years</option>
-							    		<option value="1000">1000 years</option>
-							    	</select>
-							    </fieldset>
-							</form>
-							<p id="submit-btn" class="lead"><a href="#climate-change" class="btn btn-lg btn-default">Learn more</a></p>
+						<section id="query">
+							<div id="pre-search">
+								<h1 class="cover-heading">Do you need a <em class="red">House</em> or a <em>Boat</em>?</h1>
+								
+								<p class="lead">Find out if your house will be below water in the future</p>
+								
+								<form action="#" method="post">
+									<fieldset>
+										<label for="postcode">I live at</label><input type="text" id="postcode" name="postcode" placeholder="postcode" size="8" /> <label for="form-submit">will I</label> <input id="form-submit" type="submit" value="sink or swim?" class="btn btn-lg btn-default" />
+									</fieldset>
+									<p><a href="" class="advanced-query-show">Advanced search</a></p>
+									<div id="advanced-query">
+										<fieldset>
+											<label for="outlook">I am …</label>
+											
+											<select id="outlook" name="outlook">
+												<option value="optimist">an optimist</option>
+												<option value="pessimist" selected="selected">a pessimist</option>
+												<option value="denial">a climate change denier</option>
+											</select>
+										</fieldset>
+										
+										<fieldset>
+											<label for="years">I want to live here for</label>
+											
+											<select id="years" name="years">
+												<option value="1">1 year</option>
+												<option value="10">10 years</option>
+												<option value="100" selected="selected">100 years</option>
+												<option value="1000">1000 years</option>
+											</select>
+										</fieldset>
+									</div>
+								</form>
+							</div>
+							<div id="post-search">
+								<a href="#" class="repeat-search">X</a>
+								<div class="result house"></div>
+								<div class="result boat"></div>
+								<div class="result denial">
+									You'll probably be fine!
+								</div>
+							</div>
+							<p class="lead"><a href="#climate-change" class="btn btn-lg btn-default">Learn more</a></p>
 						</section>
-						<section>
-							<h2 id="climate-change">Factors considered in your future housing solution</h2>
+						<section id="climate-change" class="text">
+							<h2>Climate Change</h2>
+							<p>Climate Change is Real!</p>
+						</section>
+						<section id="climate-change" class="text">
 							
-							<ol>
+							<h2>Factors considered in your future housing solution</h2>
+							
+							<p>Whether your house will be underwater at some point in the future is dependant on a number of factors Two major factors are whether a short-term weather event, such as a period of heavy rain, has led to flooding and whether long-term changes to climate has led to longer-term coastline movement.</p>
+							
+							<ul>
 								<li>
-									<h3>flooding</h3>
-									<p>short-term weather conditions can��� We make </p>
+									<h3>1) flooding</h3>
+									<p>short-term weather conditions can… We make </p>
 								</li>
 								<li>
-									<h3>sea level rise</h3>
+									<h3>2) sea level rise</h3>
 									<p>longer-term change to sea level, leading to potential of permanent dampness at your place of residence</p>
 									
-									<p>Sea level rise is complicated, so this tool makes a few assumptions.</p>
+									<p>Sea level rise is complicated, so this tool makes a few assumptions:</p>
 									<ol>
 										<li>
-											<p>Future sea level rise is based on estimations, since it's not possible (yet) to know the future. Our estimation, up to 2100, is based on the <a href="http://www.ipcc.ch/pdf/unfccc/cop19/3_gregory13sbsta.pdf">results of modelling sea level rise</a>, as reported in the Intergovernmental Panel on Climate Change's <a href="http://www.climatechange2013.org/">Climate Change 2013 Report</a>.</p>
-										</li>
-										<li>
-											<p>Our estimations up to 1000 years in the future are based on <a href="http://www.pnas.org/content/early/2013/07/10/1219414110">Levermann et al.'s 2013 paper in PNAS</a>, predicts that 1��C of warming would result in a global sea level rise of 2.3m within 2000 years, with 2��C of warming 2��C leading to 4.8 m within 2000 years.</p>
+											<p>Future sea level rise is based on estimations, since it's not possible (yet) to know the future.</p>
+											
+											<h4>10 and 100 years</h3>
+											<p>Our estimation, up to the year 2100, is based on the <a href="http://www.ipcc.ch/pdf/unfccc/cop19/3_gregory13sbsta.pdf">results of modelling sea level rise</a>, as reported in the Intergovernmental Panel on Climate Change's <a href="http://www.climatechange2013.org/">Climate Change 2013 Report</a>.</p>
+											
+											<p>The optimistic estimate is the low end of rise, as predicted by IPCC's RCP2.6 model, of sea level rising by 28cm by 2100. The pessimistic estimate is the high end of the RCP8.5 model.</p>
+											<p>See more at: http://www.realclimate.org/index.php/archives/2013/10/sea-level-in-the-5th-ipcc-report/#sthash.ltcqZBm9.dpuf</p>
+
+											
+											<h4>1000 years</h4>
+											<p>Our estimations up to 2000 years in the future are based on <a href="http://www.pnas.org/content/early/2013/07/10/1219414110">Levermann et al.'s 2013 paper in PNAS</a>, which predicts that 1°C of global warming would result in a global sea level rise of 2.3m within 2000 years, with 2°C of warming leading to 4.8m within 2000 years.</p>
+											
+											<p>This 2°C of temperature change over the next 2000 years is </p>
 										
-											<p>of warming over the next 2000 years is an often used optimistic goal. The pessimistic view of the temperature trend could see 4��C of warming over the next 2000 years.</p>
+											<p>The pessimistic view of the temperature trend could see 4°C of warming over the next 2000 years.</p>											
 											
-											
-											Global sea-level rise in cm by the year 2100 as projected by the IPCC AR5. The values are relative to the mean over 1986-2005, so subtract about a centimetre to get numbers relative to the year 2000.
+											<h4>The Numbers</h4>
 											
 											<table>
 												<thead>
@@ -122,37 +151,25 @@
 													</tr>
 												</tbody>
 											</table>
-											
-											10 years
-											
-											
-											100 years
-											Most optimistic estimate is low end of IPCC's RCP2.6 model. Most pessimistic is high end of RCP8.5 model.
-											See more at: http://www.realclimate.org/index.php/archives/2013/10/sea-level-in-the-5th-ipcc-report/#sthash.ltcqZBm9.dpuf
-											
-											
-											1000 years:
-											
-											Most optimistic estimate, from Levermann et al, is temperature change of 1��C over next century, leading to +230cm change. Most pessimistic is temperature change of 2��C over next century, leading to +480cm change.
-											
-											</li>
-											
-											<li>The actual amount of sea level rise is different around the world. We assume that the rise for entire of UK is as predicted by IPCC for global trend. A fair assumption, as about 70% of the coastlines worldwide are projected to experience sea level change within 20% of the global mean sea level change</li>
+										</li>
+										<li>
+											Global sea-level rise in cm by the year 2100 as projected by the IPCC AR5. The values are relative to the mean over 1986-2005, so subtract about a centimetre to get numbers relative to the year 2000.
+										</li>
+										<li>
+										The actual amount of sea level rise is different around the world. We assume that the rise for entire of UK is as predicted by IPCC for global trend. A fair assumption, as about 70% of the coastlines worldwide are projected to experience sea level change within 20% of the global mean sea level change</li>
 											<li>determining the effect of sea level rise on changes to UK coastline is complex, requiring more sophisticated modelling of terrain than we are going to attempt here. For context, using this method the current lowest point in the UK (Holme Fen, Huntingdonshire) would currently require a boat, being 3m below sea level.</li>
-											
-											
-											</li>
 									</ol>
-									
-									<p>Fact:
-											
-											the largest contribution to sea level rise isn't melting ice caps, but thermal expansion of existing sea water.
-											
-											On the low end, the range for the RCP2.6 scenario is 28-61 cm rise by 2100, with a best estimate of 44 cm. Now that is very remarkable, given that this is a scenario with drastic emissions reductions starting in a few years from now, with the world reaching zero emissions by 2070 and after that succeeding in active carbon dioxide removal from the atmosphere. Even so, the expected sea-level rise will be almost three times as large as that experienced over the 20th Century (17 cm). - See more at: http://www.realclimate.org/index.php/archives/2013/10/sea-level-in-the-5th-ipcc-report/#sthash.ltcqZBm9.dpuf
-											</p>
+								</li>
+							</ul>
+							
+							<h3>Fact:</h3>
+							
+							<p>the largest contribution to sea level rise isn't melting ice caps, but thermal expansion of existing sea water.</p>
+							
+							<p>On the low end, the range for the RCP2.6 scenario is 28-61 cm rise by 2100, with a best estimate of 44 cm. Now that is very remarkable, given that this is a scenario with drastic emissions reductions starting in a few years from now, with the world reaching zero emissions by 2070 and after that succeeding in active carbon dioxide removal from the atmosphere. Even so, the expected sea-level rise will be almost three times as large as that experienced over the 20th Century (17 cm).</p>
 						</section>
-						<section>
-							<h2 id="about">about</h2>
+						<section id="about">
+							<h2>about</h2>
 						</section>
 					</div>
 					<div class="mastfoot">
@@ -215,5 +232,20 @@
 			google.maps.event.addDomListener(window, 'load', init);
     		init();
     	</script>
+		<script type="text/javascript">
+			jQuery('.advanced-query-show').click(function(event){
+				event.preventDefault();
+				jQuery('#advanced-query').slideToggle(200);
+			});
+			jQuery('form').submit(function(event){
+				event.preventDefault();
+				jQuery('#pre-search').hide();
+				jQuery('#post-search').show();
+			});
+			jQuery('.repeat-search').click(function(event){
+				jQuery('#pre-search').show();
+				jQuery('#post-search').hide();
+			});
+		</script>
 	</body>
 </html>
