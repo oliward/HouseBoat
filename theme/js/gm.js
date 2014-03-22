@@ -42,3 +42,60 @@ function getElevation(geoRes) {
 			} 
 		});
 }
+
+function getSinkOrSwim(elevation, outlook, years) {
+	var futureElevation = 0;
+	if (outlook != "denial") {
+		switch (years) {
+		case 1:
+			if (outlook == "optimist") {
+				futureElevation = (elevation - 0.006);
+			} else {
+				futureElevation = (elevation - 0.015);
+			}
+			break;
+		case 10:
+			if (outlook == "optimist") {
+				futureElevation = (elevation - 0.06);
+			} else {
+				futureElevation = (elevation - 0.15);
+			}
+			break;
+		case 100:
+			if (outlook == "optimist") {
+				futureElevation = (elevation - 0.28);
+			} else {
+				futureElevation = (elevation - 0.98);
+			}
+			break;
+		case 1000:
+			if (outlook == "optimist") {
+				futureElevation = (elevation - 2.3);
+			} else {
+				futureElevation = (elevation - 4.8);
+			}
+			break;
+		default:
+			if (outlook == "optimist") {
+				futureElevation = (elevation - 0.06);
+			} else {
+				futureElevation = (elevation - 0.15);
+			}
+			break;
+		}
+		
+		alert("Current elevation: " + elevation + " Future elevation: " + futureElevation);
+	} else {
+		// Denial 
+		showResult("deny", elevation, elevation);
+	}
+	
+	if (futureElevation <= 0) {
+		// Sink
+		showResult("sink", elevation, futureElevation);
+	} else {
+		// Swim
+		showResult("swim", elevation, futureElevation);
+	}
+	
+}
