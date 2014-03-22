@@ -77,7 +77,7 @@
 								</form>
 							</div>
 							<div id="post-search">
-								<a href="#" class="repeat-search">X</a>
+								<a href="#" class="repeat-search">Start again [X]</a>
 								<div id="res-house" class="result house"></div>
 								<div id="res-boat" class="result boat"></div>
 								<div id="res-deny" class="result denial">
@@ -86,7 +86,7 @@
 								<p>Based on your location we calculated that you are Xm above/below sea level. In the year Y the sea level will be Z meters higher than currently. This means you will "be fine in your house" / "need a boat".*</p>
 								<p><a href="#calculation">*Find out about how we calculated this value</a></p>
 							</div>
-							<p class="lead"><a href="#climate-change" class="btn btn-default">Learn more</a></p>
+							<p class="cta"><a href="#climate-change">Learn more</a></p>
 						</section>
 						<section id="climate-change" class="text">
 							<h2>Climate Change</h2>
@@ -290,6 +290,14 @@
 				bodyStlying();
 			});
 			bodyStlying();
+			
+			jQuery('.site-wrapper').scroll(function(){
+				if (jQuery('.site-wrapper').scrollTop() > 50){
+					jQuery('.masthead').css({'opacity':0.1});
+				}else{
+					jQuery('.masthead').css({'opacity':( (50-jQuery('.site-wrapper').scrollTop())/50)});
+				}
+			});
 		</script>
 	</body>
 </html>

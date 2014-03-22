@@ -117,6 +117,10 @@ label {
 	position: fixed;
 }
 
+.masthead:hover {
+	opacity: 1 !important;
+}
+
 section {
 	padding-top: 150px;
 }
@@ -154,8 +158,12 @@ h1 em.red {
 	color: #e82900;
 }
 
-.lead {
+.lead, .cta {
 	margin: 40px 0;
+}
+
+.cta {
+	font-size: 1.4em;
 }
 
 section.text {
