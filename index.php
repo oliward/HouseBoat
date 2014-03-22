@@ -82,6 +82,8 @@
 								<div class="result denial">
 									You'll probably be fine!
 								</div>
+								<p>Based on your location we calculated that you are Xm above/below sea level. In the year Y the sea level will be Z meters higher than currently. This means you will "be fine in your house" / "need a boat".*</p>
+								<p><a href="#calculation">*Find out about how we calculated this value</a></p>
 							</div>
 							<p class="lead"><a href="#climate-change" class="btn btn-lg btn-default">Learn more</a></p>
 						</section>
@@ -89,7 +91,7 @@
 							<h2>Climate Change</h2>
 							<p>Climate Change is Real!</p>
 						</section>
-						<section id="climate-change" class="text">
+						<section id="calculation" class="text">
 							
 							<h2>Factors considered in your future housing solution</h2>
 							
@@ -109,7 +111,7 @@
 										<li>
 											<p>Future sea level rise is based on estimations, since it's not possible (yet) to know the future.</p>
 											
-											<h4>10 and 100 years</h3>
+											<h4>10 and 100 years</h4>
 											<p>Our estimation, up to the year 2100, is based on the <a href="http://www.ipcc.ch/pdf/unfccc/cop19/3_gregory13sbsta.pdf">results of modelling sea level rise</a>, as reported in the Intergovernmental Panel on Climate Change's <a href="http://www.climatechange2013.org/">Climate Change 2013 Report</a>.</p>
 											
 											<p>The optimistic estimate is the low end of rise, as predicted by IPCC's RCP2.6 model, of sea level rising by 28cm by 2100. The pessimistic estimate is the high end of the RCP8.5 model.</p>
