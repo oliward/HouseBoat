@@ -77,8 +77,8 @@ I want to live here for:
 
 
 *1000 years:*
-+230cm
-+480cm
++50cm (half of 1.0m change over 2000 years, based on 1°C of warming over 2000 years)
++605cm (half of 12.1m change over 2000 years, based on 4°C of warming over 2000 years)
 
 
 ### Information

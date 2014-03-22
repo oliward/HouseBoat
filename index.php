@@ -113,7 +113,7 @@
 								</li>
 								<li>
 									<h3>2) sea level rise</h3>
-									<p>The longer-term effect of changing sea level will lead to potential of permanent dampness at your place of residence.</p>
+									<p>The longer-term effect of changing sea level will lead to potential permanent dampness at your place of residence.</p>
 									
 									<p>Sea level rise is complicated, so this tool makes a few assumptions:</p>
 									<ol>
@@ -177,14 +177,16 @@
 						<section id="facts" class="text">
 							<h3>'fun' facts:</h3>
 							
-							<p>the largest contribution to sea level rise isn't melting ice caps, but thermal expansion of existing sea water.</p>
+							<p>You might find it surprising that the largest contribution to sea level rise isn't melting ice caps, but thermal expansion of existing sea water.</p>
 							
-							<p>On the low end, the range for the RCP2.6 scenario is 28-61 cm rise by 2100, with a best estimate of 44 cm. Now that is very remarkable, given that this is a scenario with drastic emissions reductions starting in a few years from now, with the world reaching zero emissions by 2070 and after that succeeding in active carbon dioxide removal from the atmosphere. Even so, the expected sea-level rise will be almost three times as large as that experienced over the 20th Century (17 cm).</p>
+							<p>The 'optimistic' sea level rise used in this tool are the low end, with a best estimate of 44 cm rise by 2100. This model assumes a currently unrealistic scenario where we are able to drastically reduce emissions in a few years from now, with the world reaching zero emissions by 2070. The model also assumes that, following reaching 0 net emissions, that we succeed in removal of carbon dioxide from the atmosphere. Even so, the expected sea-level rise will be almost three times as large as that experienced over the 20th Century (17 cm).</p>
 						</section>
 						<section id="about">
 							<h2>about</h2>
 							
-							<p>This tool was made as part of the <a href="http://bathhacked.bathnes.gov.uk">March 2013 Bath:Hacked</a> weekend by a team from <a href="http://www.theagencyonline.co.uk/">The Agency, Bath</a></p>
+							<p>This tool was made as part of the <a href="http://bathhacked.bathnes.gov.uk">March 2014 Bath:Hacked</a> weekend by a team from <a href="http://www.theagencyonline.co.uk/">The Agency Integrated Ad Agency, Bath</a></p>
+							<p>The GitHub repository for this project is <a href="https://github.com/TheAgencyLtd/HouseBoat">here</a></p>
+							<p>This tool uses the <a href="https://developers.google.com/maps/documentation/javascript/geocoding">Google Maps API</a>, and its sea level change trends are based on <a href="http://www.climatechange2013.org/">Intergovernmental Panel on Climate Change's Climate Change 2013 Report</a> and <a href="http://www.pnas.org/content/early/2013/07/10/1219414110.full.pdf">Levermann et al.'s 2013 paper in PNAS [PDF]</a>.</p>
 						</section>
 					</div>
 				</div>
