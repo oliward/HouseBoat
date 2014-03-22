@@ -29,12 +29,13 @@
 				<div class="cover-container">
 					<div class="masthead clearfix">
 						<div class="inner">
-							<h3 class="masthead-brand">house/boat</h3>
+							<h3 class="masthead-brand"><a href="#query">house/boat</a></h3>
 							
 							<ul class="nav masthead-nav">
-								<li><a href="#query">House or Boat?</a></li>
-								<li><a href="#climate-change">Climate Change</a></li>
-								<li><a href="#about">About</a></li>
+								<li><a href="#climate-change">climate change</a></li>
+								<li><a href="#calculation">sea level rise</a></li>
+								<li><a href="#facts">facts</a></li>
+								<li><a href="#about">about</a></li>
 							</ul>
 						</div>
 					</div>
@@ -50,7 +51,7 @@
 									<fieldset>
 										<label for="postcode">I live at</label><input type="text" id="postcode" name="postcode" placeholder="postcode" size="8" /> <label for="form-submit">will I</label> <input id="form-submit" type="submit" value="sink or swim?" class="btn btn-lg btn-default" />
 									</fieldset>
-									<p><a href="" class="advanced-query-show">Advanced search</a></p>
+									<p><a href="" class="advanced-query-show">Advanced options</a></p>
 									<div id="advanced-query">
 										<fieldset>
 											<label for="outlook">I am …</label>
@@ -76,7 +77,7 @@
 								</form>
 							</div>
 							<div id="post-search">
-								<a href="#" class="repeat-search">X</a>
+								<a href="#" class="repeat-search">Start again [X]</a>
 								<div class="result house"></div>
 								<div class="result boat"></div>
 								<div class="result denial">
@@ -85,26 +86,34 @@
 								<p>Based on your location we calculated that you are Xm above/below sea level. In the year Y the sea level will be Z meters higher than currently. This means you will "be fine in your house" / "need a boat".*</p>
 								<p><a href="#calculation">*Find out about how we calculated this value</a></p>
 							</div>
-							<p class="lead"><a href="#climate-change" class="btn btn-lg btn-default">Learn more</a></p>
+							<p class="lead"><a href="#climate-change" class="btn btn-default">Learn more</a></p>
 						</section>
 						<section id="climate-change" class="text">
 							<h2>Climate Change</h2>
-							<p>Climate Change is Real!</p>
+							<p>Climate Change is a very real phenomenon, with 97% of climate scientists in agreement, <a href="http://climate.nasa.gov/scientific-consensus">according to NASA</a>.</p>
+							<p>Its effects will become increasingly relevant to people around the world.</p>
+							
+							<p><img src="theme/images/Temp_anomaly.jpg" alt="" /></p>
+							
+							<p class="reference">Agreement of temperature data from four leading international science institutions. From <a href="http://climate.nasa.gov/scientific-consensus">http://climate.nasa.gov/scientific-consensus</a>, all rights retained by original owner(s).</p>
 						</section>
 						<section id="calculation" class="text">
 							
 							<h2>Factors considered in your future housing solution</h2>
 							
-							<p>Whether your house will be underwater at some point in the future is dependant on a number of factors Two major factors are whether a short-term weather event, such as a period of heavy rain, has led to flooding and whether long-term changes to climate has led to longer-term coastline movement.</p>
+							<p>Climate change will have a wide variety of effects on our lives, we've chosen to look at the effect that sea level rise may have.</p>
+							<p>Whether your house will be underwater at some point in the future is dependant on a number of factors.</p>
+							
+							<p>The two major factors are 1) whether a <em>short-term change in weather</em>, such as a period of heavy rain, has led to flooding and 2) whether <em>long-term changes to climate</em> has led to longer-term movement of coastline.</p>
 							
 							<ul>
 								<li>
 									<h3>1) flooding</h3>
-									<p>short-term weather conditions can… We make </p>
+									<p>Short-term weather conditions can have a dramatic effect on the environment, and an extended period of severe weather can lead to localised flooding, as happened cross the UK during the first quarter of 2014.</p>
 								</li>
 								<li>
 									<h3>2) sea level rise</h3>
-									<p>longer-term change to sea level, leading to potential of permanent dampness at your place of residence</p>
+									<p>The longer-term effect of changing sea level will lead to potential of permanent dampness at your place of residence.</p>
 									
 									<p>Sea level rise is complicated, so this tool makes a few assumptions:</p>
 									<ol>
@@ -116,14 +125,15 @@
 											
 											<p>The optimistic estimate is the low end of rise, as predicted by IPCC's RCP2.6 model, of sea level rising by 28cm by 2100. The pessimistic estimate is the high end of the RCP8.5 model.</p>
 											<p>See more at: http://www.realclimate.org/index.php/archives/2013/10/sea-level-in-the-5th-ipcc-report/#sthash.ltcqZBm9.dpuf</p>
-
 											
 											<h4>1000 years</h4>
 											<p>Our estimations up to 2000 years in the future are based on <a href="http://www.pnas.org/content/early/2013/07/10/1219414110">Levermann et al.'s 2013 paper in PNAS</a>, which predicts that 1°C of global warming would result in a global sea level rise of 2.3m within 2000 years, with 2°C of warming leading to 4.8m within 2000 years.</p>
 											
 											<p>This 2°C of temperature change over the next 2000 years is </p>
 										
-											<p>The pessimistic view of the temperature trend could see 4°C of warming over the next 2000 years.</p>											
+											<p>The pessimistic view of the temperature trend could see 4°C of warming over the next 2000 years.</p>
+											<p><img src="theme/images/WGI_AR5_Fig13-8.jpg" alt="" /></p>
+											<p class="reference">Church, J.A., P.U. Clark, A. Cazenave, J.M. Gregory, S. Jevrejeva, A. Levermann, M.A. Merrifield, G.A. Milne, R.S. Nerem, P.D. Nunn, A.J. Payne, W.T. Pfeffer, D. Stammer and A.S. Unnikrishnan, 2013: Sea Level Change. In: Climate Change 2013: The Physical Science Basis. Contribution of Working Group I to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change [Stocker, T.F., D. Qin, G.-K. Plattner, M. Tignor, S.K. Allen, J. Boschung, A. Nauels, Y. Xia, V. Bex and P.M. Midgley (eds.)]. Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA.</p>
 											
 											<h4>The Numbers</h4>
 											
@@ -163,8 +173,9 @@
 									</ol>
 								</li>
 							</ul>
-							
-							<h3>Fact:</h3>
+						</section>
+						<section id="facts" class="text">
+							<h3>'fun' facts:</h3>
 							
 							<p>the largest contribution to sea level rise isn't melting ice caps, but thermal expansion of existing sea water.</p>
 							
@@ -172,12 +183,9 @@
 						</section>
 						<section id="about">
 							<h2>about</h2>
+							
+							<p>This tool was made as part of the <a href="http://bathhacked.bathnes.gov.uk">March 2013 Bath:Hacked</a> weekend by a team from <a href="http://www.theagencyonline.co.uk/">The Agency, Bath</a></p>
 						</section>
-					</div>
-					<div class="mastfoot">
-						<div class="inner">
-							<p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -248,6 +256,14 @@
 				jQuery('#pre-search').show();
 				jQuery('#post-search').hide();
 			});
+			function bodyStlying(){
+				// set body height to viewport to handle inset box shadow and content scrolling
+				$('.site-wrapper, #query').css('height', $(window).height());
+			}
+			jQuery(window).resize(function(){
+				bodyStlying();
+			});
+			bodyStlying();
 		</script>
 	</body>
 </html>
