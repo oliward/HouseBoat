@@ -77,9 +77,9 @@
 							</div>
 							<div id="post-search">
 								<a href="#" class="repeat-search">X</a>
-								<div class="result house"></div>
-								<div class="result boat"></div>
-								<div class="result denial">
+								<div id="res-house" class="result house"></div>
+								<div id="res-boat" class="result boat"></div>
+								<div id="res-deny" class="result denial">
 									You'll probably be fine!
 								</div>
 							</div>
@@ -198,7 +198,7 @@
 					map = new google.maps.Map(document.getElementById(map), mapOptions);
 				} 
 		    	geocoder = new google.maps.Geocoder();
-				google.maps.event.addDomListener(document.getElementById('submit-btn'), 'click', getLoc);
+				//google.maps.event.addDomListener(document.getElementById('submit-btn'), 'click', getLoc);
 				elevator = new google.maps.ElevationService();
 				setVars(map, geocoder, elevator);
 			}
@@ -208,7 +208,7 @@
 	    			// Get lat/long
 	            	lat = geoResult.geometry.location.lat();
 	            	lng = geoResult.geometry.location.lng();
-	            	alert("Latitude: " + lat + " Longitude: " + lng);
+	            	//alert("Latitude: " + lat + " Longitude: " + lng);
 	            	getElevation(geoResult.geometry.location);
 	            }
 			}
@@ -216,7 +216,10 @@
 			function eleResultCallback(eleResult) {
 				if (eleResult != null) {
 	    			// Get elevation
-	            	alert("Elevation: " + eleResult);
+	    			outlook = $('#outlook').val();
+	    			years = $('#years').val();
+	            	//alert("Elevation: " + eleResult + " Outlook: " + outlook + " Years: " + years);
+	            	getSinkOrSwim(eleResult, outlook, years);
 	            }
 			}
 
@@ -224,9 +227,31 @@
     			var pc = $("#postcode").val();
     			if (pc.trim() != "" && pc.trim() != null) {
     				geocodePostcode(pc);
+    				return true;
         		} else {
 					alert("Please enter a postcode");
+					return false;
     			}
+    		}
+
+    		function showResult(res, ce, fe) {
+
+    			jQuery('#pre-search').hide();
+				jQuery('#post-search').show();
+				switch(res) {
+					case "swim":
+						jQuery('#res-boat').hide();
+						jQuery('#res-deny').hide();
+						break; 
+					case "sink":
+						jQuery('#res-house').hide();
+						jQuery('#res-deny').hide();
+						break; 
+					case "deny":
+						jQuery('#res-house').hide();
+						jQuery('#res-boat').hide();
+						break; 
+				}
     		}
 		
 			google.maps.event.addDomListener(window, 'load', init);
@@ -239,8 +264,7 @@
 			});
 			jQuery('form').submit(function(event){
 				event.preventDefault();
-				jQuery('#pre-search').hide();
-				jQuery('#post-search').show();
+				getLoc();
 			});
 			jQuery('.repeat-search').click(function(event){
 				jQuery('#pre-search').show();
