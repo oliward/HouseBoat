@@ -31,13 +31,26 @@ Notification (email or txt) of impending flood, based on their location. Needs a
 
 
 
-### Basic
+### Basic query
 
 Take postcode, default to 100 years, assume pessimist.
 
+Response:
+
+*denier*
+
+"You'll probably be fine!"
+
+*other*
+
+JS returns "house" or "boat" => appropriate icon is displayed
+
+Additional info:
+
+Based on your location we calculated that you are Xm above/below sea level. In the year Y the sea level will be Z meters higher than currently. This means you will "be fine in your house" / "need a boat".
 
 
-### Advanced
+### Advanced query (available in dropdown)
 
 I am ...
 -an optimist
