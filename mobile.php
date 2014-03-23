@@ -292,27 +292,5 @@
 			google.maps.event.addDomListener(window, 'load', init);
     		init();
     	</script>
-		<script type="text/javascript">
-			jQuery('.advanced-query-show').click(function(event){
-				event.preventDefault();
-				jQuery('#advanced-query').slideToggle(200);
-			});
-			jQuery('form').submit(function(event){
-				event.preventDefault();
-				getLoc();
-			});
-			jQuery('.repeat-search').click(function(event){
-				jQuery('#pre-search').show();
-				jQuery('#post-search').hide();
-			});
-			function bodyStlying(){
-				// set body height to viewport to handle inset box shadow and content scrolling
-				$('.site-wrapper, #query').css('height', $(window).height());
-			}
-			jQuery(window).resize(function(){
-				bodyStlying();
-			});
-			bodyStlying();
-		</script>
 	</body>
 </html>
