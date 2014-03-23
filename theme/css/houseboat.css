@@ -26,8 +26,10 @@ form {
 	display: none;
 }
 
-input {
+input, select {
 	color: #09a3e2;
+}
+input {
 	border: 3px solid #ccc;
 	text-align: center;
 }
@@ -80,7 +82,7 @@ label {
 }
 
 /*
- * mobile form
+ * iPhone form
  */
 
 @media (max-width: 768px) {
@@ -98,19 +100,16 @@ label {
 /*
  * Base structure
  */
-
-/*
- * mobile form
- */
-
-@media (max-width: 768px) {
-	body {
-		box-shadow: none;
-	}
-}
-
-
-/*
+ 
+ @media (max-width: 768px) {
+ 	body {
+ 		box-shadow: none;
+ 	}
+ 	
+ 	.masthead {
+ 		width: 100%;
+ 	}
+ }
 
 .site-wrapper {
 	height: 706px;
@@ -167,7 +166,7 @@ h1 em, #res-blurb em {
 	color: #09a3e2;
 }
 
-h1 em.red {
+em.red {
 	color: #e82900;
 }
 
