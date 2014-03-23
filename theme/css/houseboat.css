@@ -131,6 +131,11 @@ label {
 
 .masthead:hover {
 	opacity: 1 !important;
+	background-image: url(../images/trans.png);
+}
+
+.inner {
+	padding: 10px 30px;
 }
 
 section {
@@ -141,6 +146,12 @@ section {
 /*
  * Content styling
  */
+
+p {
+	font-size: 1.2em;
+	line-height: 150%;
+	margin-bottom: 20px;
+}
 
 a {
 	text-decoration: underline;

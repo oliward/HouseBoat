@@ -91,7 +91,7 @@
 						</section>
 						<section id="climate-change" class="text">
 							<h2>Climate Change</h2>
-							<p>Climate Change is a very real phenomenon, with 97% of climate scientists in agreement, <a href="http://climate.nasa.gov/scientific-consensus">according to NASA</a>.</p>
+							<p>Climate Change is a very real phenomenon, with 97% of climate scientists in agreement that it has a human cause, <a href="http://climate.nasa.gov/scientific-consensus">according to NASA</a>.</p>
 							<p>Its effects will become increasingly relevant to people around the world.</p>
 							
 							<p><img src="theme/images/Temp_anomaly.jpg" alt="" /></p>
@@ -331,7 +331,8 @@
 			});
 			function bodyStlying(){
 				// set body height to viewport to handle inset box shadow and content scrolling
-				$('.site-wrapper, #query').css('height', $(window).height());
+				$('.site-wrapper').css('height', $(window).height());
+				$('#query').css('min-height', $(window).height());
 			}
 			jQuery(window).resize(function(){
 				bodyStlying();
