@@ -232,7 +232,7 @@
 
 			function getMpCallback(data) {
 				if (data != null) {
-					$("#mp-details").html('The MP for your local constituency of <strong>' + data.constituency + '</strong> is <strong>' + data.full_name + '</strong>. Click <a href="' + 'http://www.theyworkforyou.com' + data.url + '">here</a> to view thier page on www.theyworkforyou.com and get in touch.');
+					$("#mp-details").html('<em class="red">Worried about flooding or climate change?</em> The MP for your local constituency of <strong>' + data.constituency + '</strong> is <strong>' + data.full_name + '</strong>. Click <a href="' + 'http://www.theyworkforyou.com' + data.url + '">here to get in contact</a> with them.');
 				} else {
 					$("#mp-details").hide();
 				}

@@ -26,8 +26,10 @@ form {
 	display: none;
 }
 
-input {
+input, select {
 	color: #09a3e2;
+}
+input {
 	border: 3px solid #ccc;
 	text-align: center;
 }
@@ -103,6 +105,10 @@ label {
  	body {
  		box-shadow: none;
  	}
+ 	
+ 	.masthead {
+ 		width: 100%;
+ 	}
  }
 
 .site-wrapper {
@@ -160,7 +166,7 @@ h1 em, #res-blurb em {
 	color: #09a3e2;
 }
 
-h1 em.red {
+em.red {
 	color: #e82900;
 }
 
