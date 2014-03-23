@@ -19,14 +19,16 @@ Take postcode, default to 100 years, assume pessimist.
 
 Responses:
 
-*denier
+*denier*
+
 "You'll probably be fine!"
 
-*other
+*other*
+
 Appropriate icon is displayed, for house or boat
 
 
-*Additional info:
+*Additional info:*
 
 Based on your location we calculated that you are {current elevation}m above/below sea level. In the year {projected year} the sea level will be {projected elevation} meters higher than currently. This means you will "be fine in your house" / "need a boat".
 
@@ -49,12 +51,14 @@ I want to live here for:
 
 ### Model
 
-*10 years:
+*10 years:*
+
 +6cm (optimistic)
 +15cm (pessimistic)
 
 
-*100 years:
+*100 years:*
+
 +28cm
 +98cm
 
@@ -67,18 +71,21 @@ I want to live here for:
 
 ### To do
 
-*Phase 1
+*Phase 1*
+
 Improve informational content:
 [ ] Get designer to design nice info-graphics
 [ ] Get copywriter to write some nice works
 
-*Phase 2
+*Phase 2*
+
 [ ] Notification (email or txt) of impending flood, based on location
    - Postcode, where they live
    - Email (optional), for sending email notification
    - Mobile (optional), for sending txt notification
 [ ] Ability for user to change their preferences. Account, or simple txt/email response, or code for one-time login?
 
-*Phase 3
+*Phase 3*
+
 [ ] Find source for historic flood data
 [ ] Model flood, weather and elevation data to inform on future flood likelihood
