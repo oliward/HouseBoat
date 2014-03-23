@@ -80,7 +80,7 @@ label {
 }
 
 /*
- * iPhone form
+ * mobile form
  */
 
 @media (max-width: 768px) {
@@ -98,6 +98,19 @@ label {
 /*
  * Base structure
  */
+
+/*
+ * mobile form
+ */
+
+@media (max-width: 768px) {
+	body {
+		box-shadow: none;
+	}
+}
+
+
+/*
 
 .site-wrapper {
 	height: 706px;
@@ -150,7 +163,7 @@ img {
 	width: 100%;
 }
 
-h1 em {
+h1 em, #res-blurb em {
 	color: #09a3e2;
 }
 
@@ -184,5 +197,5 @@ table {
 }
 
 #res-blurb {
-	margin-top: 10px;
+	margin-top: 40px;
 }

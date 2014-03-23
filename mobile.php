@@ -14,7 +14,7 @@
 		<link href="theme/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
 		
 		<!-- Custom styles for this template -->
-		<link href="theme/css/cover.css" rel="stylesheet">
+		<link href="theme/css/cover-mobile.css" rel="stylesheet">
 		<link href="theme/css/houseboat.css" rel="stylesheet">
 		
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -84,7 +84,6 @@
 									You'll probably be fine!
 								</div>
 								<p id="res-blurb"></p>
-								<p id="mp-details"></p>
 								<p id="res-calc"><a href="#calculation">*Find out about how we calculated this value</a></p>
 							</div>
 							<p class="cta"><a href="#climate-change">Learn more</a></p>
@@ -202,7 +201,6 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="theme/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="theme/js/gm.js"></script>
-		<script type="text/javascript" src="lib/twfyapi/twfyapi.js"></script>
     	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-AbJabQ7T1f0vcfN3tQibeZ_BkXzf1Tg&sensor=true"></script>
 		<script type="text/javascript">
 
@@ -218,24 +216,6 @@
 				//google.maps.event.addDomListener(document.getElementById('submit-btn'), 'click', getLoc);
 				elevator = new google.maps.ElevationService();
 				setVars(map, geocoder, elevator);
-			}
-
-			function twfyInit() {
-				// Set up a new instance of the API binding
-				twfyapi = new TWFYAPI.TWFYAPI("AENv4rGGhrQSBz8D9LCdt6V2");
-			}
-
-			function getMp(pc) {
-				// Get a list of Labour MPs in XML format
-				twfyapi.query("getMP", {"output": "js", "callback": "getMpCallback", "postcode": pc});
-			}
-
-			function getMpCallback(data) {
-				if (data != null) {
-					$("#mp-details").html('The MP for your local constituency of <strong>' + data.constituency + '</strong> is <strong>' + data.full_name + '</strong>. Click <a href="' + 'http://www.theyworkforyou.com' + data.url + '">here</a> to view thier page on www.theyworkforyou.com and get in touch.');
-				} else {
-					$("#mp-details").hide();
-				}
 			}
 
 			function geoResultCallback(geoResult) {
@@ -254,8 +234,6 @@
 	    			outlook = $('#outlook').val();
 	    			years = $('#years').val();
 	            	//alert("Elevation: " + eleResult + " Outlook: " + outlook + " Years: " + years);
-	            	pc = $("#postcode").val();
-	            	getMp(pc);
 	            	getSinkOrSwim(eleResult, outlook, years);
 	            }
 			}
@@ -312,9 +290,7 @@
     		}
 		
 			google.maps.event.addDomListener(window, 'load', init);
-			google.maps.event.addDomListener(window, 'load', twfyInit);
     		init();
-    		twfyInit();
     	</script>
 		<script type="text/javascript">
 			jQuery('.advanced-query-show').click(function(event){
