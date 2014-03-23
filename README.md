@@ -6,29 +6,11 @@ Will I need a house or a boat for my home in the future?
 
 ### Introduction
 
-This project is responsive website, to draw attention to the effects of climate changes.
+This project is tool, to draw attention to the effects of climate changes.
 
-It functions by allowing someone to enter their postcode and be told whether they will need a house or a boat to live there in the future, based on height about sea level and future prediction of sea level change.
+It functions by allowing someone to enter their postcode and be told whether they will need a house or a boat to live there in the future, based on height above sea level and future prediction of sea level change.
 
-
-### To do
-
-*Phase 1*
-Basic tool to inform: house or boat
-
-1) Oli to create front-end (form, website, styling)
-2) Calum to create JS required to:
--find elevation from postcode with Google Maps API
--work out, from our crude models, if they are above or below sea level at that time
-
-*Phase 2*
-Notification (email or txt) of impending flood, based on their location. Needs ability for them to change their preferences. Account, or simple txt/email response, or code for one-time login?
-
-1) If we have time, allow users to get notifications if they are going to get flooded. We take:
--Postcode, where they live
--Email (optional), for sending email notification
--Mobile (optional), for sending txt notification
-
+This tool is a bit of fun, but should also be informational. A number of assumptions are made, and awareness of these helps educate people on climate change science, the evidence, certainly of what will happen in the future, and what we can do to change course
 
 
 ### Basic query
@@ -43,7 +25,7 @@ Response:
 
 *other*
 
-JS returns "house" or "boat" => appropriate icon is displayed
+Appropriate icon is displayed
 
 Additional info:
 
@@ -81,6 +63,21 @@ I want to live here for:
 +605cm (half of 12.1m change over 2000 years, based on 4°C of warming over 2000 years)
 
 
-### Information
 
-This tool is a bit of fun, but should also be informational. A number of assumptions are made, and awareness of these
+### To do
+
+*Phase 1*
+Improve informational content:
+[ ] Get designer to design nice info-graphics
+[ ] Get copywriter to write some nice works
+
+*Phase 2*
+[ ] Notification (email or txt) of impending flood, based on location
+   - Postcode, where they live
+   - Email (optional), for sending email notification
+   - Mobile (optional), for sending txt notification
+[ ] Ability for user to change their preferences. Account, or simple txt/email response, or code for one-time login?
+
+*Phase 3*
+[ ] Find source for historic flood data
+[ ] Model flood, weather and elevation data to inform on future flood likelyhood
