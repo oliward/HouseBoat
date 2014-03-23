@@ -305,14 +305,6 @@
 				jQuery('#pre-search').show();
 				jQuery('#post-search').hide();
 			});
-			function bodyStlying(){
-				// set body height to viewport to handle inset box shadow and content scrolling
-				$('.site-wrapper, #query').css('height', $(window).height());
-			}
-			jQuery(window).resize(function(){
-				bodyStlying();
-			});
-			bodyStlying();
 			
 			jQuery('.site-wrapper').scroll(function(){
 				if (jQuery('.site-wrapper').scrollTop() > 50){
