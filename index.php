@@ -6,9 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="shortcut icon" href="theme/images/favicon.ico">
+		<link rel="shortcut icon" href="favicon.ico">
 		
-		<title>House/Boat</title>
+		<title>house/boat</title>
 		
 		<!-- Bootstrap core CSS -->
 		<link href="theme/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -165,7 +165,7 @@
 											</table>
 										</li>
 										<li>
-											Global sea-level rise in cm by the year 2100 as projected by the IPCC AR5. The values are relative to the mean over 1986-2005, so subtract about a centimetre to get numbers relative to the year 2000.
+											<p>Global sea-level rise in cm by the year 2100 as projected by the IPCC AR5. The values are relative to the mean over 1986-2005, so subtract about a centimetre to get numbers relative to the year 2000.</p>
 										</li>
 										<li>
 										The actual amount of sea level rise is different around the world. We assume that the rise for entire of UK is as predicted by IPCC for global trend. A fair assumption, as about 70% of the coastlines worldwide are projected to experience sea level change within 20% of the global mean sea level change</li>
@@ -280,7 +280,7 @@
 				if (res != "deny") {
 					jQuery('#res-blurb').show();
 					jQuery('#res-calc').show();
-					jQuery('#res-blurb').text('Based on your location we calculated that you are ' + ceRound + 'm above sea level. In the year ' + yrFuture + ' the sea level will be ' + eRiseRound + ' meters higher than currently. This means you will probably ' + resText + ' *');
+					jQuery('#res-blurb').html('Based on your location we calculated that you are <em>' + ceRound + 'm</em> above sea level. In the year ' + yrFuture + ' the sea level will be <em>' + eRiseRound + '</em> meters higher than currently. This means you will probably ' + resText + ' *');
 				} else {
 					jQuery('#res-blurb').hide(); 
 				}
