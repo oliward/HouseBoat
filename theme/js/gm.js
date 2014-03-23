@@ -52,28 +52,28 @@ function getSinkOrSwim(elevation, outlook, years) {
 	var futureElevation = 0;
 	if (outlook != "denial") {
 		switch (years) {
-		case 1:
+		case "1":
 			if (outlook == "optimist") {
 				futureElevation = (elevation - 0.006);
 			} else {
 				futureElevation = (elevation - 0.015);
 			}
 			break;
-		case 10:
+		case "10":
 			if (outlook == "optimist") {
 				futureElevation = (elevation - 0.06);
 			} else {
 				futureElevation = (elevation - 0.15);
 			}
 			break;
-		case 100:
+		case "100":
 			if (outlook == "optimist") {
 				futureElevation = (elevation - 0.28);
 			} else {
 				futureElevation = (elevation - 0.98);
 			}
 			break;
-		case 1000:
+		case "1000":
 			if (outlook == "optimist") {
 				futureElevation = (elevation - 0.5);
 			} else {
