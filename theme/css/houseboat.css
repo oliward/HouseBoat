@@ -98,6 +98,12 @@ label {
 /*
  * Base structure
  */
+ 
+ @media (max-width: 768px) {
+ 	body {
+ 		box-shadow: none;
+ 	}
+ }
 
 .site-wrapper {
 	height: 706px;
