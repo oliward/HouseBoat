@@ -14,7 +14,6 @@
 		<link href="theme/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
 		
 		<!-- Custom styles for this template -->
-		<link href="theme/css/cover.css" rel="stylesheet">
 		<link href="theme/css/houseboat.css" rel="stylesheet">
 		
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
