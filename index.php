@@ -83,8 +83,8 @@
 								<div id="res-deny" class="result denial">
 									You'll probably be fine!
 								</div>
-								<p>Based on your location we calculated that you are Xm above/below sea level. In the year Y the sea level will be Z meters higher than currently. This means you will "be fine in your house" / "need a boat".*</p>
-								<p><a href="#calculation">*Find out about how we calculated this value</a></p>
+								<p id="res-blurb"></p>
+								<p id="res-calc"><a href="#calculation">*Find out about how we calculated this value</a></p>
 							</div>
 							<p class="cta"><a href="#climate-change">Learn more</a></p>
 						</section>
@@ -246,7 +246,13 @@
     			}
     		}
 
-    		function showResult(res, ce, fe) {
+    		function showResult(res, years, ce, fe) {
+
+    			d = new Date();
+        		var ceRound = ce.toFixed(2);
+        		var eRiseRound = (parseFloat(ce) - parseFloat(fe)).toFixed(2);
+        		//alert(ce + " / " + fe + " / " + res);
+        		var yrFuture = (parseFloat(d.getFullYear()) + parseFloat(years));
 
     			jQuery('#pre-search').hide();
 				jQuery('#post-search').show();
@@ -254,15 +260,29 @@
 					case "swim":
 						jQuery('#res-boat').hide();
 						jQuery('#res-deny').hide();
+						jQuery('#res-house').show();
+						resText = 'be fine in your house.';
 						break; 
 					case "sink":
 						jQuery('#res-house').hide();
 						jQuery('#res-deny').hide();
+						jQuery('#res-boat').show();
+						resText = 'need a boat.';
 						break; 
 					case "deny":
 						jQuery('#res-house').hide();
 						jQuery('#res-boat').hide();
+						jQuery('#res-calc').hide();
+						jQuery('#res-deny').show();
 						break; 
+				}
+
+				if (res != "deny") {
+					jQuery('#res-blurb').show();
+					jQuery('#res-calc').show();
+					jQuery('#res-blurb').text('Based on your location we calculated that you are ' + ceRound + 'm above sea level. In the year ' + yrFuture + ' the sea level will be ' + eRiseRound + ' meters higher than currently. This means you will probably ' + resText + ' *');
+				} else {
+					jQuery('#res-blurb').hide(); 
 				}
     		}
 		

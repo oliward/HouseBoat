@@ -21,7 +21,12 @@ function geocodePostcode(pc) {
 					// Just use the first
 					result = results[0];
 				}
-				geoResultCallback(result);
+				
+				if (result.partial_match != true) {
+					geoResultCallback(result);
+				} else {
+					alert("Sorry, we couldn't find that postcode");
+				}
 			}
 		});
 }
@@ -70,9 +75,9 @@ function getSinkOrSwim(elevation, outlook, years) {
 			break;
 		case 1000:
 			if (outlook == "optimist") {
-				futureElevation = (elevation - 2.3);
+				futureElevation = (elevation - 0.5);
 			} else {
-				futureElevation = (elevation - 4.8);
+				futureElevation = (elevation - 6.05);
 			}
 			break;
 		default:
@@ -84,18 +89,17 @@ function getSinkOrSwim(elevation, outlook, years) {
 			break;
 		}
 		
-		alert("Current elevation: " + elevation + " Future elevation: " + futureElevation);
+		//alert("Current elevation: " + elevation + " Future elevation: " + futureElevation);
+		if (futureElevation <= 0) {
+			// Sink
+			showResult("sink", years, elevation, futureElevation);
+		} else {
+			// Swim
+			showResult("swim", years, elevation, futureElevation);
+		}
 	} else {
 		// Denial 
-		showResult("deny", elevation, elevation);
-	}
-	
-	if (futureElevation <= 0) {
-		// Sink
-		showResult("sink", elevation, futureElevation);
-	} else {
-		// Swim
-		showResult("swim", elevation, futureElevation);
+		showResult("deny", years, elevation, elevation);
 	}
 	
 }
