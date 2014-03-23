@@ -227,7 +227,8 @@
 
 			function getMp(pc) {
 				// Get a list of Labour MPs in XML format
-				twfyapi.query("getMP", {"output": "js", "callback": "getMpCallback", "postcode": pc});
+				//twfyapi.query("getMP", {"output": "js", "callback": "getMpCallback", "postcode": pc});
+				$.get('http://www.theyworkforyou.com/api/getMP?postcode=' + pc + '&output=js&key=AENv4rGGhrQSBz8D9LCdt6V2&callback=getMpCallback');
 			}
 
 			function getMpCallback(data) {
