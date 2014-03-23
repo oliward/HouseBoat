@@ -14,6 +14,7 @@
 		<link href="theme/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
 		
 		<!-- Custom styles for this template -->
+		<link href="theme/css/cover-mobile.css" rel="stylesheet">
 		<link href="theme/css/houseboat.css" rel="stylesheet">
 		
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -194,5 +195,132 @@
 				</div>
 			</div>
 		</div>
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="theme/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="theme/js/gm.js"></script>
+    	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-AbJabQ7T1f0vcfN3tQibeZ_BkXzf1Tg&sensor=true"></script>
+		<script type="text/javascript">
+
+			function init(map) {
+				var mapOptions = {
+					center: new google.maps.LatLng(-34.397, 150.644),
+					zoom: 8
+		    	};
+				if (map != null) {
+					map = new google.maps.Map(document.getElementById(map), mapOptions);
+				} 
+		    	geocoder = new google.maps.Geocoder();
+				//google.maps.event.addDomListener(document.getElementById('submit-btn'), 'click', getLoc);
+				elevator = new google.maps.ElevationService();
+				setVars(map, geocoder, elevator);
+			}
+
+			function geoResultCallback(geoResult) {
+				if (geoResult != null) {
+	    			// Get lat/long
+	            	lat = geoResult.geometry.location.lat();
+	            	lng = geoResult.geometry.location.lng();
+	            	//alert("Latitude: " + lat + " Longitude: " + lng);
+	            	getElevation(geoResult.geometry.location);
+	            }
+			}
+
+			function eleResultCallback(eleResult) {
+				if (eleResult != null) {
+	    			// Get elevation
+	    			outlook = $('#outlook').val();
+	    			years = $('#years').val();
+	            	//alert("Elevation: " + eleResult + " Outlook: " + outlook + " Years: " + years);
+	            	getSinkOrSwim(eleResult, outlook, years);
+	            }
+			}
+
+			function getLoc() {
+    			var pc = $("#postcode").val();
+    			if (pc.trim() != "" && pc.trim() != null) {
+    				geocodePostcode(pc);
+    				return true;
+        		} else {
+					alert("Please enter a postcode");
+					return false;
+    			}
+    		}
+
+    		function showResult(res, years, ce, fe) {
+
+    			d = new Date();
+        		var ceRound = ce.toFixed(2);
+        		var eRiseRound = (parseFloat(ce) - parseFloat(fe)).toFixed(2);
+        		//alert(ce + " / " + fe + " / " + res);
+        		var yrFuture = (parseFloat(d.getFullYear()) + parseFloat(years));
+
+    			jQuery('#pre-search').hide();
+				jQuery('#post-search').show();
+				switch(res) {
+					case "swim":
+						jQuery('#res-boat').hide();
+						jQuery('#res-deny').hide();
+						jQuery('#res-house').show();
+						resText = 'be fine in your house.';
+						break; 
+					case "sink":
+						jQuery('#res-house').hide();
+						jQuery('#res-deny').hide();
+						jQuery('#res-boat').show();
+						resText = 'need a boat.';
+						break; 
+					case "deny":
+						jQuery('#res-house').hide();
+						jQuery('#res-boat').hide();
+						jQuery('#res-calc').hide();
+						jQuery('#res-deny').show();
+						break; 
+				}
+
+				if (res != "deny") {
+					jQuery('#res-blurb').show();
+					jQuery('#res-calc').show();
+					jQuery('#res-blurb').html('Based on your location we calculated that you are <em>' + ceRound + 'm</em> above sea level. In the year ' + yrFuture + ' the sea level will be <em>' + eRiseRound + '</em> meters higher than currently. This means you will probably ' + resText + ' *');
+				} else {
+					jQuery('#res-blurb').hide(); 
+				}
+    		}
+		
+			google.maps.event.addDomListener(window, 'load', init);
+    		init();
+    	</script>
+		<script type="text/javascript">
+			jQuery('.advanced-query-show').click(function(event){
+				event.preventDefault();
+				jQuery('#advanced-query').slideToggle(200);
+			});
+			jQuery('form').submit(function(event){
+				event.preventDefault();
+				getLoc();
+			});
+			jQuery('.repeat-search').click(function(event){
+				jQuery('#pre-search').show();
+				jQuery('#post-search').hide();
+			});
+			function bodyStlying(){
+				// set body height to viewport to handle inset box shadow and content scrolling
+				$('.site-wrapper, #query').css('height', $(window).height());
+			}
+			jQuery(window).resize(function(){
+				bodyStlying();
+			});
+			bodyStlying();
+			
+			jQuery('.site-wrapper').scroll(function(){
+				if (jQuery('.site-wrapper').scrollTop() > 50){
+					jQuery('.masthead').css({'opacity':0.1});
+				}else{
+					jQuery('.masthead').css({'opacity':( (50-jQuery('.site-wrapper').scrollTop())/50)});
+				}
+			});
+		</script>
 	</body>
 </html>
