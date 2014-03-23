@@ -80,7 +80,7 @@ label {
 }
 
 /*
- * iPhone form
+ * mobile form
  */
 
 @media (max-width: 768px) {
@@ -98,6 +98,19 @@ label {
 /*
  * Base structure
  */
+
+/*
+ * mobile form
+ */
+
+@media (max-width: 768px) {
+	body {
+		box-shadow: none;
+	}
+}
+
+
+/*
 
 .site-wrapper {
 	height: 706px;
