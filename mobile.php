@@ -305,14 +305,14 @@
 				jQuery('#pre-search').show();
 				jQuery('#post-search').hide();
 			});
-			
-			jQuery('.site-wrapper').scroll(function(){
-				if (jQuery('.site-wrapper').scrollTop() > 50){
-					jQuery('.masthead').css({'opacity':0.1});
-				}else{
-					jQuery('.masthead').css({'opacity':( (50-jQuery('.site-wrapper').scrollTop())/50)});
-				}
+			function bodyStlying(){
+				// set body height to viewport to handle inset box shadow and content scrolling
+				$('.site-wrapper, #query').css('height', $(window).height());
+			}
+			jQuery(window).resize(function(){
+				bodyStlying();
 			});
+			bodyStlying();
 		</script>
 	</body>
 </html>
