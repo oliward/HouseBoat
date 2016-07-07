@@ -203,7 +203,7 @@
 		<script src="theme/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="theme/js/gm.js"></script>
 		<script type="text/javascript" src="lib/twfyapi/twfyapi.js"></script>
-    	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-AbJabQ7T1f0vcfN3tQibeZ_BkXzf1Tg&sensor=true"></script>
+    	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB62lwhZaoT4Jn0kjRLno9pz_dmKfRwV8E&sensor=true"></script>
 		<script type="text/javascript">
 
 			function init(map) {
